@@ -1,0 +1,7 @@
+node_modules/
+work/
+outputs/
+*.sqlite*
+*.partial*
+.env
+*.log

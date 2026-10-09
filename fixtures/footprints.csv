@@ -1,0 +1,3 @@
+footprint_id,template
+widget,"""{location}"" ""demo-widget.js"""
+booking,"""{location}"" ""demo-booking"""
