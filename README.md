@@ -1,8 +1,11 @@
 # API-to-CSV Workbench
 
+[![Verify workbench](https://github.com/JhinxDev/api-csv-workbench/actions/workflows/ci.yml/badge.svg)](https://github.com/JhinxDev/api-csv-workbench/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Turn editable locations and search footprints into a bounded, resumable batch and two inspectable CSVs: one row per normalized host, plus every distinct query match that explains how it was found.
 
-AI-assisted personal work sample. Synthetic examples and local HTTP acceptance tests run without customer data, a paid API or a model. The PublicWWW REST adapter follows current first-party documentation; paid-account behavior and real buyer inputs remain unverified. This is a CLI with Windows launchers, not a GUI or a completed client contract.
+Zero-dependency Node.js 24 CLI with SQLite checkpointing, SHA-256 input pinning, and a local HTTP acceptance suite. Live searches target the PublicWWW REST API with your own `PUBLICWWW_API_KEY`; synthetic examples run offline without external credentials.
 
 ## Try it
 
@@ -59,7 +62,7 @@ After an actual process crash, verify it stopped, then add `--recover-lock`. Rec
 
 Live origin is fixed to `https://api.publicwww.com`. Set `PUBLICWWW_API_KEY` in the operator's process environment using their own approved secret-management method; there is no key flag, key file or credential acquisition feature. Never put a key in CSVs or a query. `doctor` only reports presence and does not validate a key or contact the provider.
 
-Use the same `plan`, `run` and `resume` commands with `--provider publicwww`. No live search was run during this project. Before a client handover, verify their paid plan, approved sample queries, query volume, paging behavior and desired output using their own access. See [provider contract](docs/provider-contract.md) and [operator walkthrough](docs/operator-walkthrough.md).
+Use the same `plan`, `run` and `resume` commands with `--provider publicwww`. Before running against a live account, verify your plan limits, query syntax, paging behavior, and desired export schema. See [provider contract](docs/provider-contract.md) and [operator walkthrough](docs/operator-walkthrough.md).
 
 `local-http` accepts only numeric loopback HTTP origins and sends no Authorization header, even if a real key exists in the environment. It exists for acceptance fixtures. Live redirects are refused. No crawler, snippets, enrichment, hosted service, official-provider MCP replacement, outreach or paid API purchase is included.
 
